@@ -200,7 +200,7 @@ st.subheader("Piotr Niemiec - Uniwersum Szkolnej 17")
 st.markdown('<div class="domek-container">', unsafe_allow_html=True)
 try:
     if os.path.exists("knur/domek.jpg"):
-        st.image("knur/domek.jpg", caption="🏡 Domek na Szkolnej 17", width=400)
+        st.image("knur/domek.jpg", caption="🏡 Domek na Szkolnej 17", width=600)
     else:
         st.markdown("<div style='font-size: 4em; text-align: center;'>🏡</div>", unsafe_allow_html=True)
         st.caption("Domek na Szkolnej 17 (brak pliku knur/domek.jpg)")
@@ -393,8 +393,8 @@ for msg in st.session_state.messages:
         else:
             # Major aktywny -> użytkownik jako Knur  
             st.markdown(f"""
-            <div style='display: flex; align-items: center; margin: 10px 0; padding: 10px;color: black;  background-color: #9dd907; border-radius: 10px;'>
-                <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="40" style="border-radius: 50%; margin-right: 10px;">
+            <div style='display: flex; align-items: center; margin: 10px 0; padding: 10px;color: black;  background-color: #AAd907; border-radius: 10px;'>
+                <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="30" style="border-radius: 50%; margin-right: 10px;">
                 <div><strong>Knur:</strong> {msg['content']}</div>
             </div>
             """, unsafe_allow_html=True)
@@ -403,8 +403,8 @@ for msg in st.session_state.messages:
         if is_knur:
             # Knur odpowiada
             st.markdown(f"""
-            <div style='display: flex; align-items: center; color: black; margin: 10px 0; padding: 10px; background-color: #e60e4e; border-radius: 10px;'>
-                <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="40" style="border-radius: 50%; margin-right: 10px;">
+            <div style='display: flex; align-items: center; color: black; margin: 10px 0; padding: 10px; background-color: #AA0e4e; border-radius: 10px;'>
+                <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="30" style="border-radius: 50%; margin-right: 10px;">
                 <div><strong>Knur:</strong> {msg['content']}</div>
             </div>
             """, unsafe_allow_html=True)
@@ -436,8 +436,8 @@ if prompt := st.chat_input(f"Napisz jako {user_name}..."):
     else:
         # Użytkownik jako Knur
         st.markdown(f"""
-        <div style='display: flex; align-items: center; color: black;  margin: 10px 0; padding: 10px; background-color: #a3103c; border-radius: 10px;'>
-            <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="40" style="border-radius: 50%; margin-right: 10px;">
+        <div style='display: flex; align-items: center; color: black;  margin: 10px 0; padding: 10px; background-color: #AA103c; border-radius: 10px;'>
+            <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="30" style="border-radius: 50%; margin-right: 10px;">
             <div><strong>Knur:</strong> {prompt}</div>
         </div>
         """, unsafe_allow_html=True)
@@ -454,8 +454,8 @@ if prompt := st.chat_input(f"Napisz jako {user_name}..."):
     if is_knur:
         # Knur odpowiada-
         st.markdown(f"""
-        <div style='display: flex; align-items: center; color: black;  margin: 10px 0; padding: 10px; background-color: #ff1251; border-radius: 10px;'>
-            <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="40" style="border-radius: 50%; margin-right: 10px;">
+        <div style='display: flex; align-items: center; color: black;  margin: 10px 0; padding: 10px; background-color: #AA1251; border-radius: 10px;'>
+            <img src="data:image/jpeg;base64,{get_image_base64('knur/knur.jpg')}" width="30" style="border-radius: 50%; margin-right: 10px;">
             <div><strong>Knur:</strong> {response}</div>
         </div>
         """, unsafe_allow_html=True)
@@ -486,7 +486,9 @@ if st.button("sprzątanie domku drewnianego", use_container_width=True):
 
 
 # footer 
+
 st.markdown("---")
+
 st.markdown("""
 **Projekt Python - Chatbot Kononowicz**
 - Autor: Piotr niemiec
@@ -496,3 +498,16 @@ st.markdown("""
 
 *Instrukcja:*uruchom streamlita  uruchom LM Studio z llama, wybierz postać w sidebarze, pisz w chacie!
 """)
+
+st.markdown('<div class="domek-container">', unsafe_allow_html=True)
+try:
+    if os.path.exists("knur/szkolna.jpg"):
+        st.image("knur/szkolna.jpg", caption="🏡 ekipa 17", width=800)
+    else:
+        st.markdown("<div style='font-size: 4em; text-align: center;'>🏡</div>", unsafe_allow_html=True)
+        st.caption("Domek na Szkolnej 17 (brak pliku knur/domek.jpg)")
+except:
+    st.markdown("<div style='font-size: 4em; text-align: center;'>🏡</div>", unsafe_allow_html=True)
+    
+    
+st.markdown('</div>', unsafe_allow_html=True)
