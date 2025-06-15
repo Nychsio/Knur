@@ -2,6 +2,7 @@
 import streamlit as st
 import requests
 import json
+import base64 # tlo
 import os
 
 #  MASTER PROMPTY (NA SAMEJ GÓRZE)
@@ -187,29 +188,6 @@ Nitro (rozpuszczalnik):
 "Ugółem, żeby żyć trzeba jeść, a kabab jest dobry jak rosół, więc wszystkiego dobrego wszystkim!"
 """
 
-# konfiguracja
-st.set_page_config(
-    page_title="Chatbot Knur",
-    page_icon="🏡",
-    layout="wide"
-)
-# CSS
-st.markdown("""
-<style>
-    .main {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iYSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmNWRlYjMiLz48cGF0aCBkPSJNLTEwIDMwbDIwLTIwTDMwIDMwbDIwLTIwTDcwIDMwbDIwLTIwdjIwTDcwIDUwTDUwIDMwTDMwIDUwTDEwIDMwWiIgZmlsbD0iI2RlYjg4NyIgZmlsbC1vcGFjaXR5PSIuMiIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==');
-    }
-    .character-image {
-        border: 3px solid #8B4513;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .domek-container {
-        text-align: center;
-        margin: 20px 0;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 
 
@@ -279,14 +257,14 @@ with st.sidebar:
     
     # Podstawowe parametry
     temperature = st.slider("mitomania kononowicza", 0.0, 1.0, 0.7)
-    max_tokens = st.slider("rozlewność knura", 100, 500, 300)
+    max_tokens = st.slider("ilość sypukcji cukru", 100, 500, 300)
     
     
     
     # Pokazuje jaka postać jest aktywna 
     if is_knur:
         st.success("🥛 Aktywny: Knur")
-        st.write("Gwara podlaska, dramatyczny")
+        st.write("nibęben,niżarłak")
         
         # ZDJĘCIE KNURA
         try:
@@ -299,7 +277,7 @@ with st.sidebar:
             st.markdown("<div style='font-size: 4em; text-align: center;'>🥛</div>", unsafe_allow_html=True)
     else:
         st.success("🎖️ Aktywny: Major") 
-        st.write("Spokojny, poprawna polszczyzna")
+        st.write("Miły,mogę się wysło wić jak to się mówi się  ")
         
         
         
